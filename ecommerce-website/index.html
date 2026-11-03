@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meridian Wholesale & Supply Co. | Direct Commercial Distribution</title>
+    <meta name="description" content="Commercial B2B wholesale distribution platform providing direct-from-manufacturer supplies, bulk pallet logistics, and enterprise purchasing." />
+    <meta property="og:title" content="Meridian Wholesale & Supply Co. | Commercial Distribution" />
+    <meta property="og:description" content="Direct-from-manufacturer B2B wholesale catalog with tiered volume pricing and enterprise logistics." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts for Editorial Commercial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Bar (Strictly <= 40px) -->
+    <div class="top-notice-bar">
+      <div class="container">
+        <div class="notice-meta">
+          <span>Enterprise Logistics Hub</span>
+          <span aria-hidden="true">·</span>
+          <span>Net 30 Invoicing for Qualified Commercial Accounts</span>
+        </div>
+        <div class="notice-meta">
+          <span>Toll-Free B2B Desk: 1-800-555-0199</span>
+          <span aria-hidden="true">·</span>
+          <a href="admin/login.html">Owner / Admin Portal</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Header: 3-Zone Contract -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Zone 1: Wordmark -->
+        <a href="index.html" class="brand-zone">
+          <div class="brand-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <span class="brand-name">MERIDIAN <span>WHOLESALE</span></span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="nav-zone">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="products.html" class="nav-link">Products Catalog</a>
+          <a href="#categories" class="nav-link">Categories</a>
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Zone 3: Search, Cart & Admin Action -->
+        <div class="actions-zone">
+          <form class="header-search header-search-form" action="products.html" method="get">
+            <span class="header-search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" name="search" placeholder="Search SKU, name, or spec..." aria-label="Search catalog">
+          </form>
+
+          <a href="cart.html" class="cart-button-link" aria-label="View shopping cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Quote Cart</span>
+            <span class="cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="admin/dashboard.html" class="btn-admin-portal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+            </svg>
+            <span>Admin</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button type="button" class="mobile-menu-toggle" aria-label="Open mobile navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer & Overlay -->
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <span class="font-bold text-slate-900">Meridian Wholesale</span>
+        <button type="button" class="mobile-drawer-close text-slate-500 hover:text-slate-900">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html" class="mobile-drawer-link">Home</a>
+        <a href="products.html" class="mobile-drawer-link">Products Catalog</a>
+        <a href="#categories" class="mobile-drawer-link">Categories</a>
+        <a href="#about" class="mobile-drawer-link">About Us</a>
+        <a href="#contact" class="mobile-drawer-link">Contact</a>
+        <a href="cart.html" class="mobile-drawer-link">Wholesale Cart</a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admin/login.html" class="btn btn-dark btn-block">
+          Owner / Admin Login
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-tagline">Direct Commercial Distribution</div>
+            <h1 class="hero-title">Commercial Supply Lines for High-Volume Enterprise Operations</h1>
+            <p class="hero-description">
+              Meridian Wholesale provides verified factory-direct procurement, pallet-rate freight logistics, and Net 30 purchasing across kitchen, hardware, packaging, and facility sectors.
+            </p>
+            <div class="hero-actions">
+              <a href="products.html" class="btn btn-primary btn-lg">
+                View Wholesale Catalog
+              </a>
+              <a href="#about" class="btn btn-secondary btn-lg">
+                Why Meridian
+              </a>
+            </div>
+            <div class="hero-trust-metrics">
+              <div class="metric-block">
+                <div class="metric-value">99.4%</div>
+                <div class="metric-label">On-Time Pallet Dispatch</div>
+              </div>
+              <div class="metric-block">
+                <div class="metric-value">Net 30</div>
+                <div class="metric-label">Commercial Credit Terms</div>
+              </div>
+              <div class="metric-block">
+                <div class="metric-value">ISO 9001</div>
+                <div class="metric-label">Certified Distribution Hub</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="assets/images/hero_wholesale.jpg" alt="Meridian modern commercial logistics and wholesale distribution center" loading="eager" onerror="this.src='src/assets/images/hero_wholesale_warehouse_1793706823153.jpg';">
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Categories Section -->
+      <section id="categories" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Core Product Divisions</div>
+              <h2 class="section-title">Wholesale Categories</h2>
+              <p class="section-subtitle">Source by commercial industry vertical with verified bulk pack quantities and manufacturer warranties.</p>
+            </div>
+            <a href="products.html" class="category-link-cta">
+              <span>All Categories</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="category-grid">
+            <!-- Category 1 -->
+            <article class="category-card">
+              <div class="category-image-wrap">
+                <img src="assets/images/cat_commercial_kitchen.jpg" alt="Commercial Kitchen Equipment" loading="lazy" onerror="this.src='src/assets/images/cat_commercial_kitchen_1793706835796.jpg';">
+              </div>
+              <div class="category-info">
+                <h3 class="category-name">Commercial Kitchen</h3>
+                <p class="category-description">NSF-certified stainless cookware, cutlery, food prep appliances, and restaurant smallwares in master cartons.</p>
+                <a href="products.html?category=Commercial%20Kitchen" class="category-link-cta">
+                  Browse Kitchen Equipment →
+                </a>
+              </div>
+            </article>
+
+            <!-- Category 2 -->
+            <article class="category-card">
+              <div class="category-image-wrap">
+                <img src="assets/images/cat_industrial_hardware.jpg" alt="Industrial Hardware & Tools" loading="lazy" onerror="this.src='src/assets/images/cat_industrial_hardware_1793706821895.jpg';">
+              </div>
+              <div class="category-info">
+                <h3 class="category-name">Industrial Hardware</h3>
+                <p class="category-description">High-torque wrenches, Grade 8 structural fasteners, precision assembly tools, and shop consumables.</p>
+                <a href="products.html?category=Industrial%20Hardware" class="category-link-cta">
+                  Browse Hardware Tools →
+                </a>
+              </div>
+            </article>
+
+            <!-- Category 3 -->
+            <article class="category-card">
+              <div class="category-image-wrap">
+                <img src="assets/images/cat_packaging_supplies.jpg" alt="Eco Packaging Supplies" loading="lazy" onerror="this.src='src/assets/images/cat_packaging_supplies_1793706823264.jpg';">
+              </div>
+              <div class="category-info">
+                <h3 class="category-name">Eco Packaging</h3>
+                <p class="category-description">FSC-certified corrugated cartons, gummed kraft tape, biodegradable void fill, and pallet wrap.</p>
+                <a href="products.html?category=Eco%20Packaging" class="category-link-cta">
+                  Browse Packaging Supplies →
+                </a>
+              </div>
+            </article>
+
+            <!-- Category 4 -->
+            <article class="category-card">
+              <div class="category-image-wrap">
+                <img src="assets/images/cat_facility_equipment.jpg" alt="Facility Equipment & Hygiene" loading="lazy" onerror="this.src='src/assets/images/cat_facility_equipment_1793706823200.jpg';">
+              </div>
+              <div class="category-info">
+                <h3 class="category-name">Facility Equipment</h3>
+                <p class="category-description">Commercial sanitizing stations, janitorial carts, heavy floor care systems, and maintenance bins.</p>
+                <a href="products.html?category=Facility%20Equipment" class="category-link-cta">
+                  Browse Facility Supplies →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products Spotlight -->
+      <section class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Catalog Highlight</div>
+              <h2 class="section-title">Featured Wholesale Products</h2>
+              <p class="section-subtitle">Real-time inventory view from our master distribution catalog.</p>
+            </div>
+            <a href="products.html" class="btn btn-secondary btn-sm">
+              View Full Catalog (100+ SKUs)
+            </a>
+          </div>
+
+          <!-- Dynamic Container Controlled by JS -->
+          <div id="home-featured-products" class="products-grid">
+            <!-- Populated via script or pristine empty state -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Introduction & Quality Assurance -->
+      <section id="about" class="section">
+        <div class="container business-intro-grid">
+          <div class="business-intro-content">
+            <div class="section-kicker">Corporate Background</div>
+            <h2>Built Specifically for Enterprise Procurement Managers</h2>
+            <p>
+              Founded to streamline institutional supply chains, Meridian Wholesale eliminates middleman markups by connecting verified manufacturers directly with commercial buyers, contractors, hospitality operators, and industrial facilities.
+            </p>
+            <p>
+              We operate over 450,000 square feet of climate-controlled distribution center space with daily LTL freight departures across North America, ensuring dependable fulfillment schedules and rigorous QA inspections on every pallet.
+            </p>
+            <div class="business-stats-row">
+              <div>
+                <div class="metric-value">450K+</div>
+                <div class="metric-label">Sq Ft Warehouse Network</div>
+              </div>
+              <div>
+                <div class="metric-value">2,800+</div>
+                <div class="metric-label">Active B2B Accounts</div>
+              </div>
+              <div>
+                <div class="metric-value">12 hrs</div>
+                <div class="metric-label">Avg RFQ Quote Response</div>
+              </div>
+            </div>
+          </div>
+          <div class="business-intro-visual">
+            <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2.5rem; box-shadow: var(--shadow-md);">
+              <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Wholesale Purchasing Advantages</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; font-size: 0.9375rem; color: var(--color-text-muted);">
+                <li style="display: flex; gap: 0.75rem;">
+                  <span style="color: var(--color-accent); font-weight: 700;">✓</span>
+                  <span><strong>Volume Tier Discounts:</strong> Up to 35% discount tiers calculated automatically at checkout based on case counts.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem;">
+                  <span style="color: var(--color-accent); font-weight: 700;">✓</span>
+                  <span><strong>Dedicated Account Representatives:</strong> Direct contact phone and email for custom RFQs, pallet consolidation, and special orders.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem;">
+                  <span style="color: var(--color-accent); font-weight: 700;">✓</span>
+                  <span><strong>Liftgate & Dock Delivery:</strong> Freight options customized for job sites, ground-level retail, or raised industrial docks.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem;">
+                  <span style="color: var(--color-accent); font-weight: 700;">✓</span>
+                  <span><strong>Automated Invoicing & PO Tracking:</strong> Seamless integration with your ERP accounting via standard EDI and PDF receipts.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+          <div class="section-header" style="text-align: center; justify-content: center; flex-direction: column;">
+            <div class="section-kicker">Operational Excellence</div>
+            <h2 class="section-title">Why Commercial Buyers Choose Meridian</h2>
+            <p class="section-subtitle" style="max-width: 650px; margin: 0.5rem auto 0;">Standardized enterprise procedures that safeguard supply predictability and operational continuity.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 class="feature-title">Tiered Bulk Pricing</h3>
+              <p class="feature-desc">Published wholesale price brackets per case with automated volume reductions for full pallet orders.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <h3 class="feature-title">Freight Optimization</h3>
+              <p class="feature-desc">Nationwide consolidated LTL shipping with free freight allowances on orders meeting qualifying thresholds.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="feature-title">Dedicated Account Reps</h3>
+              <p class="feature-desc">Single point of contact for reorders, standing contracts, delivery coordination, and tax-exempt filing.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="feature-title">Quality Assurance</h3>
+              <p class="feature-desc">Every production run passes 100% material lot tracking, ASTM/NSF standard compliance, and integrity testing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Inquiry Section -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="contact-section-grid">
+            <div>
+              <div class="section-kicker">Commercial Support</div>
+              <h2>Connect with our B2B Procurement Team</h2>
+              <p style="margin-top: 0.5rem;">Have questions regarding custom pallet configurations, export shipping, or opening a Net 30 commercial account? Contact our team directly.</p>
+              
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <div class="contact-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Wholesale Inquiries</div>
+                    <div class="contact-item-val">+1 (800) 555-0199 / Option 2</div>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Direct RFQ Desk</div>
+                    <div class="contact-item-val">procurement@meridianwholesale.com</div>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Central Distribution Hub</div>
+                    <div class="contact-item-val">7400 Logistics Boulevard, Suite 100, Dallas, TX 75261</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fast Inquiry Form -->
+            <div>
+              <h3 style="margin-bottom: 1.25rem;">Request a Volume Quote (RFQ)</h3>
+              <form id="home-rfq-form" onsubmit="event.preventDefault(); showToast('Your RFQ has been received. An account manager will reply within 4 business hours.', 'success'); this.reset();">
+                <div class="form-group">
+                  <label class="form-label">Business / Institution Name</label>
+                  <input type="text" class="form-control" placeholder="e.g. Apex Industrial Solutions Ltd." required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Commercial Email</label>
+                  <input type="email" class="form-control" placeholder="purchasing@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Estimated Monthly Order Volume</label>
+                  <select class="form-control">
+                    <option>Under $5,000 / month</option>
+                    <option>$5,000 – $25,000 / month</option>
+                    <option>$25,000 – $100,000 / month</option>
+                    <option>$100,000+ / month (Enterprise Contract)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Specific SKUs or Product Requirements</label>
+                  <textarea class="form-control" placeholder="List required item categories, case counts, or delivery deadlines..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Submit Wholesale Inquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-title">MERIDIAN WHOLESALE & SUPPLY CO.</div>
+            <p class="footer-desc">
+              National B2B distribution leader delivering factory-direct commercial goods, restaurant supplies, packaging materials, and facility logistics to enterprise partners.
+            </p>
+            <div style="font-size: 0.8125rem; color: #94a3b8;">
+              Warehouse Operations: Mon – Fri: 06:00 – 19:00 CST<br>
+              LTL Dock Receiving: 07:00 – 16:30 CST
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-heading">Catalog Divisions</div>
+            <ul class="footer-links">
+              <li><a href="products.html?category=Commercial%20Kitchen">Commercial Kitchen</a></li>
+              <li><a href="products.html?category=Industrial%20Hardware">Industrial Hardware</a></li>
+              <li><a href="products.html?category=Eco%20Packaging">Eco Packaging</a></li>
+              <li><a href="products.html?category=Facility%20Equipment">Facility Equipment</a></li>
+              <li><a href="products.html">All 100+ Wholesale SKUs</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-heading">Procurement</div>
+            <ul class="footer-links">
+              <li><a href="cart.html">View Quote Cart</a></li>
+              <li><a href="admin/login.html">Owner / Admin Portal</a></li>
+              <li><a href="#about">Net 30 Credit Application</a></li>
+              <li><a href="#about">Tax Exemption Certs</a></li>
+              <li><a href="#contact">Freight Schedules</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-heading">Enterprise Compliance</div>
+            <p class="footer-desc">
+              ISO 9001:2015 Registered Distribution Facilities. NSF & ANSI Standard Supplier. DUNS: 08-442-9912.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="admin/login.html" class="btn btn-secondary btn-sm" style="color: #ffffff; border-color: rgba(255,255,255,0.2);">
+                Admin Portal Login →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            © 2026 Meridian Wholesale & Supply Co. All rights reserved. Commercial wholesale transactions subject to master terms.
+          </div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="products.html">Catalog</a>
+            <a href="cart.html">Cart</a>
+            <a href="admin/dashboard.html">Admin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+      // Render featured products on Homepage
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('home-featured-products');
+        if (!container) return;
+        const products = ProductStore.getProducts();
+
+        if (products.length === 0) {
+          container.innerHTML = `
+            <div class="empty-catalog-state">
+              <div class="empty-state-icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <h3 class="empty-catalog-title">Catalog Inventory Initializing</h3>
+              <p class="empty-catalog-message">
+                Our inventory is ready to be configured. You can load sample wholesale products or create your custom inventory in the admin dashboard.
+              </p>
+              <div class="empty-state-actions">
+                <button type="button" class="btn btn-primary" onclick="ProductStore.seedSampleCatalog(); location.reload();">
+                  Load Sample Wholesale Catalog
+                </button>
+                <a href="admin/dashboard.html" class="btn btn-secondary">
+                  Open Owner Dashboard
+                </a>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        // Show up to 3 featured products
+        const featured = products.slice(0, 3);
+        container.innerHTML = featured.map(product => `
+          <article class="product-card">
+            <div class="product-card-image">
+              <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/cat_commercial_kitchen.jpg';">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-meta">
+                <span class="product-card-category">${product.category}</span>
+                <span class="product-card-sku">${product.sku}</span>
+              </div>
+              <h4 class="product-card-title">
+                <a href="product-details.html?id=${product.id}">${product.name}</a>
+              </h4>
+              <p class="product-card-desc">${product.description || ''}</p>
+              
+              <div class="product-card-pricing">
+                <div class="product-price-block">
+                  <span class="product-price-label">Case Price</span>
+                  <span class="product-card-price">${formatCurrency(product.price)}</span>
+                </div>
+                <div class="product-unit-info">
+                  <span>${product.caseQuantity} units/case</span><br>
+                  <span class="text-xs text-slate-500">MOQ: ${product.moq} cases</span>
+                </div>
+              </div>
+
+              <div class="product-card-actions">
+                <a href="product-details.html?id=${product.id}" class="btn btn-secondary btn-sm">
+                  View Details
+                </a>
+                <button type="button" class="btn btn-dark btn-sm" onclick="CartStore.addToCart(ProductStore.getProductById('${product.id}'), ${product.moq || 1})">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      });
+    </script>
+  </body>
+</html>

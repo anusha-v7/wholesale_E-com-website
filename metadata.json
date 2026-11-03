@@ -1,0 +1,6 @@
+{
+  "name": "Meridian Wholesale & Supply Co.",
+  "description": "Commercial B2B wholesale e-commerce platform with catalog filtering, tiered pricing, RFQ shopping cart, and owner admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

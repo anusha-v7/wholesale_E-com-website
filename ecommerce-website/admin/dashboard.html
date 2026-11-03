@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner & Catalog Dashboard | Meridian Wholesale</title>
+    <meta name="description" content="Manage wholesale inventory, product listings, pricing tiers, and warehouse stock levels." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body id="admin-dashboard-root">
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-brand-header">
+          <div style="width: 32px; height: 32px; background-color: var(--color-accent); color: #fff; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-weight: 800;">
+            M
+          </div>
+          <div>
+            <div class="brand-title">Meridian Supply</div>
+            <div class="badge-admin">Enterprise Admin</div>
+          </div>
+        </div>
+
+        <nav class="admin-nav">
+          <a href="dashboard.html" class="admin-nav-item active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Products Inventory</span>
+          </a>
+
+          <a href="../products.html" class="admin-nav-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Customer Catalog</span>
+          </a>
+
+          <a href="../cart.html" class="admin-nav-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Wholesale Orders / RFQ</span>
+          </a>
+
+          <a href="../index.html" class="admin-nav-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Public Storefront</span>
+          </a>
+        </nav>
+
+        <div class="admin-sidebar-footer">
+          <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.75rem;">
+            Demo Admin: <strong id="admin-user-display" class="text-white">admin@meridian.com</strong>
+          </div>
+          <button type="button" id="btn-admin-logout" class="btn btn-secondary btn-sm btn-block" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05);">
+            Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Admin Content Area -->
+      <div class="admin-main-wrapper">
+        <!-- Top Toolbar -->
+        <header class="admin-top-bar">
+          <div>
+            <h1 class="admin-top-title">Owner Catalog Dashboard</h1>
+            <p style="font-size: 0.8125rem; color: var(--color-text-muted);">Manage real-time catalog items, wholesale pricing, and Minimum Order Quantities (MOQ).</p>
+          </div>
+
+          <div class="admin-top-actions">
+            <button type="button" id="btn-seed-catalog" class="btn btn-secondary btn-sm" title="Seed 8 verified wholesale items for testing">
+              Load Sample Catalog
+            </button>
+
+            <button type="button" id="btn-clear-catalog" class="btn btn-secondary btn-sm text-red-600" title="Reset catalog to empty state">
+              Reset to Empty State
+            </button>
+
+            <button type="button" id="btn-open-add-modal" class="btn btn-primary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Product</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="admin-content">
+          <!-- KPI Metrics Row -->
+          <div class="admin-kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-title">Total Products</span>
+                <div class="kpi-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+              </div>
+              <div id="kpi-total-products" class="kpi-value">0</div>
+              <div class="kpi-subtitle">Active SKUs in wholesale catalog</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-title">Active Divisions</span>
+                <div class="kpi-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                </div>
+              </div>
+              <div id="kpi-active-categories" class="kpi-value">0</div>
+              <div class="kpi-subtitle">Categories with active inventory</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-title">In-Stock Items</span>
+                <div class="kpi-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div id="kpi-in-stock" class="kpi-value text-emerald-600">0</div>
+              <div class="kpi-subtitle">Available for immediate LTL freight</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-title">Total Inventory Value</span>
+                <div class="kpi-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div id="kpi-inventory-value" class="kpi-value">$0.00</div>
+              <div class="kpi-subtitle">Calculated wholesale valuation</div>
+            </div>
+          </div>
+
+          <!-- Secondary Overview Row: Category Breakdown + Recently Added Products -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Category Distribution Widget -->
+            <div class="admin-table-card" style="padding: 1.5rem;">
+              <h3 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--color-primary);">Products by Category</h3>
+              <div id="admin-category-breakdown" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Recently Added Products Widget -->
+            <div class="admin-table-card" style="padding: 1.5rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.05rem; color: var(--color-primary);">Recently Added Products</h3>
+                <span style="font-size: 0.75rem; color: var(--color-text-subtle);">Latest additions</span>
+              </div>
+              <div id="admin-recent-products-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Management Table Card -->
+          <div class="admin-table-card">
+            <div class="admin-table-toolbar">
+              <div class="admin-filter-controls">
+                <input type="text" id="admin-search-input" class="admin-search-input" placeholder="Search product name, SKU, category...">
+                
+                <select id="admin-category-filter" class="form-control" style="width: auto; padding: 0.45rem 1rem;">
+                  <option value="all">All Product Divisions</option>
+                  <option value="Commercial Kitchen">Commercial Kitchen</option>
+                  <option value="Industrial Hardware">Industrial Hardware</option>
+                  <option value="Eco Packaging">Eco Packaging</option>
+                  <option value="Facility Equipment">Facility Equipment</option>
+                </select>
+              </div>
+
+              <div style="font-size: 0.8125rem; color: var(--color-text-muted);">
+                Changes reflect instantly in customer catalog & details
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Image</th>
+                    <th>SKU</th>
+                    <th>Product Title & Specs</th>
+                    <th>Division</th>
+                    <th>Case Price / MOQ</th>
+                    <th>Date Added</th>
+                    <th>Warehouse Stock</th>
+                    <th style="width: 140px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-table-body">
+                  <!-- Populated by js/admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add / Edit Product Modal -->
+    <div id="product-editor-modal" class="modal-backdrop">
+      <div class="modal-dialog" style="max-width: 680px;">
+        <div class="modal-header">
+          <h3 id="modal-editor-title" class="modal-title">Add New Wholesale Product</h3>
+          <button type="button" id="btn-close-product-modal" class="modal-close-btn">&times;</button>
+        </div>
+        <form id="product-editor-form" novalidate>
+          <input type="hidden" id="field-product-id">
+
+          <div class="modal-body">
+            <div id="editor-form-error" style="display: none; padding: 0.75rem 1rem; margin-bottom: 1rem; border-radius: var(--radius-md); font-size: 0.8125rem; background-color: var(--color-danger-bg); color: var(--color-danger); border: 1px solid #fecaca;"></div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-product-name">Product Name *</label>
+              <input type="text" id="field-product-name" class="form-control" placeholder="e.g. Commercial 18/10 Stainless Steel Stock Pot (40 Qt)" required>
+              <div id="field-name-error" class="form-help" style="color: var(--color-danger); display: none;">Product name is required.</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="field-product-sku">SKU Code</label>
+                <input type="text" id="field-product-sku" class="form-control font-mono" placeholder="CK-POT-040">
+                <div class="form-help">Leave blank to auto-generate unique SKU</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-product-category">Wholesale Division *</label>
+                <select id="field-product-category" class="form-control" required>
+                  <option value="Commercial Kitchen">Commercial Kitchen</option>
+                  <option value="Industrial Hardware">Industrial Hardware</option>
+                  <option value="Eco Packaging">Eco Packaging</option>
+                  <option value="Facility Equipment">Facility Equipment</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="field-product-price">Wholesale Case Price ($) *</label>
+                <input type="number" id="field-product-price" class="form-control" step="0.01" min="0.01" placeholder="185.00" required>
+                <div id="field-price-error" class="form-help" style="color: var(--color-danger); display: none;">Valid price greater than $0 is required.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-product-case-qty">Units Per Case</label>
+                <input type="number" id="field-product-case-qty" class="form-control" min="1" placeholder="4" value="4">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-product-moq">Min. Order (MOQ Cases)</label>
+                <input type="number" id="field-product-moq" class="form-control" min="1" placeholder="2" value="2">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="field-product-stock">Warehouse Inventory (Cases)</label>
+                <input type="number" id="field-product-stock" class="form-control" min="0" placeholder="50" value="50">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-product-lead-time">Dispatch Lead Time</label>
+                <input type="text" id="field-product-lead-time" class="form-control" placeholder="1-2 Business Days" value="1-2 Business Days">
+              </div>
+            </div>
+
+            <!-- Product Image Upload & URL with Live Preview -->
+            <div class="form-group">
+              <label class="form-label">Product Image (File Upload or Image URL)</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <div>
+                  <input type="file" id="field-product-image-file" class="form-control" accept="image/*" style="font-size: 0.75rem;">
+                  <div class="form-help">Upload image from device (IndexedDB persistent)</div>
+                </div>
+                <div>
+                  <input type="text" id="field-product-image" class="form-control" placeholder="or enter Image URL / Path">
+                  <div class="form-help">e.g. assets/images/cat_commercial_kitchen.jpg</div>
+                </div>
+              </div>
+
+              <!-- Live Preview -->
+              <div class="image-preview-container">
+                <img id="image-preview-img" src="../assets/images/cat_commercial_kitchen.jpg" alt="Preview">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-product-desc">Product Description & Wholesale Specifications</label>
+              <textarea id="field-product-desc" class="form-control" rows="3" placeholder="Provide technical specifications, certifications (NSF, ASTM, ADA), and packaging details..."></textarea>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="btn-cancel-product-modal" class="btn btn-secondary">
+              Cancel
+            </button>
+            <button type="submit" id="btn-save-product-submit" class="btn btn-primary">
+              Save Wholesale Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-confirm-modal" class="modal-backdrop">
+      <div class="modal-dialog" style="max-width: 440px;">
+        <div class="modal-header">
+          <h3 class="modal-title" style="color: var(--color-danger);">Delete Product</h3>
+          <button type="button" id="btn-close-delete-modal" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.9375rem; margin-bottom: 0.75rem;">Are you sure you want to delete this product from the wholesale catalog?</p>
+          <div style="background-color: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem; margin-bottom: 0.5rem;">
+            <strong id="delete-product-name-preview" style="color: var(--color-primary); display: block;">Product Name</strong>
+            <span id="delete-product-sku-preview" class="text-xs font-mono text-slate-500">SKU-000</span>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--color-text-subtle);">This will immediately remove the product from customer catalogs and cart calculations.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btn-cancel-delete" class="btn btn-secondary">Cancel</button>
+          <button type="button" id="btn-confirm-delete" class="btn btn-danger">Confirm Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Portal Sign-In | Meridian Wholesale</title>
+    <meta name="description" content="Administrative login portal for Meridian Wholesale catalog managers and store owners." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body class="admin-login-body">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background-color: var(--color-primary); color: #fff; border-radius: var(--radius-md); margin-bottom: 0.75rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <h2 style="font-size: 1.35rem; color: var(--color-primary);">Meridian Admin Portal</h2>
+        <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: 0.25rem;">Authorized Catalog Management & Inventory Operations</p>
+      </div>
+
+      <div class="admin-login-body-content">
+        <!-- Quick Demo Credentials Fill -->
+        <div class="demo-credentials-banner">
+          <strong>Demo Enterprise Credentials:</strong>
+          <span>Email: <code>admin@meridian.com</code> · Password: <code>admin2026</code></span>
+          <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center;">
+            <button type="button" id="btn-demo-login" class="btn btn-secondary btn-sm" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">
+              Fill Demo Credentials
+            </button>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">(One-click test)</span>
+          </div>
+        </div>
+
+        <!-- Alert Container for Login Feedback -->
+        <div id="login-alert" style="display: none; padding: 0.75rem 1rem; margin-bottom: 1rem; border-radius: var(--radius-md); font-size: 0.8125rem; background-color: var(--color-danger-bg); color: var(--color-danger); border: 1px solid #fecaca;"></div>
+
+        <form id="admin-login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="admin-email">Administrator Email *</label>
+            <input type="email" id="admin-email" class="form-control" placeholder="admin@meridian.com" autocomplete="email" required>
+            <div id="email-error" class="form-help" style="color: var(--color-danger); display: none;">Please provide a valid administrator email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="admin-password">Password *</label>
+            <div style="position: relative; display: flex; align-items: center;">
+              <input type="password" id="admin-password" class="form-control" placeholder="••••••••" autocomplete="current-password" required style="padding-right: 2.75rem;">
+              <button type="button" id="btn-toggle-password" style="position: absolute; right: 0.75rem; background: none; border: none; color: var(--color-text-muted); padding: 0.25rem; display: flex; align-items: center; justify-content: center; cursor: pointer;" aria-label="Toggle password visibility" title="Show/hide password">
+                <!-- Eye icon -->
+                <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <!-- Eye-off icon (hidden by default) -->
+                <svg id="eye-off-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                  <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                  <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                  <line x1="2" y1="2" x2="22" y2="22"></line>
+                </svg>
+              </button>
+            </div>
+            <div id="password-error" class="form-help" style="color: var(--color-danger); display: none;">Password is required.</div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.8125rem;">
+            <label style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); cursor: pointer;">
+              <input type="checkbox" id="remember-session" checked style="accent-color: var(--color-accent);">
+              <span>Remember session</span>
+            </label>
+            <span style="color: var(--color-text-subtle);">Demo Security</span>
+          </div>
+
+          <button type="submit" id="btn-login-submit" class="btn btn-dark btn-block btn-lg" style="margin-bottom: 1rem;">
+            Sign In to Dashboard
+          </button>
+
+          <p style="font-size: 0.75rem; color: var(--color-text-subtle); text-align: center; margin-bottom: 1.25rem; line-height: 1.4;">
+            Architecture Notice: This is a frontend demo authentication implementation. Real backend OAuth/JWT validation can be attached without altering visual interfaces.
+          </p>
+
+          <div style="text-align: center;">
+            <a href="../index.html" style="font-size: 0.8125rem; color: var(--color-text-muted); text-decoration: underline;">
+              ← Return to Wholesale Storefront
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wholesale Quote Cart | Meridian Wholesale & Supply Co.</title>
+    <meta name="description" content="Review your bulk wholesale order items, adjust case quantities, estimate freight delivery, and submit commercial purchase orders." />
+    <meta property="og:title" content="Wholesale Cart | Meridian Wholesale" />
+    <meta property="og:description" content="Commercial shopping cart and purchase order interface." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-notice-bar">
+      <div class="container">
+        <div class="notice-meta">
+          <span>Enterprise Freight Logistics Hub</span>
+          <span aria-hidden="true">·</span>
+          <span>Orders over $1,500 qualify for FREE standard LTL freight</span>
+        </div>
+        <div class="notice-meta">
+          <span>B2B Desk: 1-800-555-0199</span>
+          <span aria-hidden="true">·</span>
+          <a href="admin/login.html">Owner / Admin Portal</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-zone">
+          <div class="brand-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <span class="brand-name">MERIDIAN <span>WHOLESALE</span></span>
+        </a>
+
+        <nav class="nav-zone">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products Catalog</a>
+          <a href="index.html#categories" class="nav-link">Categories</a>
+          <a href="index.html#about" class="nav-link">About Us</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="actions-zone">
+          <form class="header-search header-search-form" action="products.html" method="get">
+            <span class="header-search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" name="search" placeholder="Search SKU, name..." aria-label="Search catalog">
+          </form>
+
+          <a href="cart.html" class="cart-button-link" aria-label="View shopping cart" style="border-color: var(--color-accent); background-color: var(--color-accent-subtle);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Quote Cart</span>
+            <span class="cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="admin/dashboard.html" class="btn-admin-portal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+            </svg>
+            <span>Admin</span>
+          </a>
+
+          <button type="button" class="mobile-menu-toggle" aria-label="Open mobile navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer & Overlay -->
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <span class="font-bold text-slate-900">Meridian Wholesale</span>
+        <button type="button" class="mobile-drawer-close text-slate-500 hover:text-slate-900">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html" class="mobile-drawer-link">Home</a>
+        <a href="products.html" class="mobile-drawer-link">Products Catalog</a>
+        <a href="index.html#categories" class="mobile-drawer-link">Categories</a>
+        <a href="index.html#about" class="mobile-drawer-link">About Us</a>
+        <a href="index.html#contact" class="mobile-drawer-link">Contact</a>
+        <a href="cart.html" class="mobile-drawer-link">Wholesale Cart</a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admin/login.html" class="btn btn-dark btn-block">
+          Owner / Admin Login
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Shopping Cart Content -->
+    <main class="container" style="padding-top: 1.5rem; padding-bottom: 5rem;">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Commercial Catalog</a></li>
+          <li>Shopping Cart & Quote Review</li>
+        </ol>
+      </nav>
+
+      <div style="margin-bottom: 2rem;">
+        <h1>Wholesale Quote & Purchase Cart</h1>
+        <p style="margin-top: 0.5rem;">Review itemized master case quantities, freight estimation, and submit your commercial order.</p>
+      </div>
+
+      <div class="cart-layout">
+        <!-- Left: Cart Items Table -->
+        <div id="cart-container">
+          <!-- Dynamically populated by js/cart.js -->
+        </div>
+
+        <!-- Right: Order Summary Card -->
+        <aside class="cart-summary-card">
+          <h3 style="margin-bottom: 1.25rem;">Order Summary</h3>
+
+          <div class="summary-line">
+            <span>Wholesale Subtotal</span>
+            <span id="cart-subtotal" class="tabular-nums font-semibold">$0.00</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Estimated LTL Freight</span>
+            <span id="cart-freight" class="tabular-nums font-semibold">$0.00</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Sales Tax (Wholesale Resale)</span>
+            <span id="cart-tax" style="font-size: 0.8125rem;">$0.00 (Exempt)</span>
+          </div>
+
+          <div class="summary-line summary-total">
+            <span>Total Amount</span>
+            <span id="cart-total" class="tabular-nums text-slate-900">$0.00</span>
+          </div>
+
+          <div style="background-color: var(--color-surface-subtle); border-radius: var(--radius-md); padding: 0.875rem; margin: 1.25rem 0; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">
+            <strong>LTL Freight Policy:</strong> Commercial orders totaling $1,500+ qualify for free scheduled pallet delivery. Standard liftgate fee applies for facilities without raised loading docks.
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button type="button" id="btn-proceed-checkout" class="btn btn-primary btn-block btn-lg">
+              Proceed to Checkout
+            </button>
+            <a href="products.html" class="btn btn-secondary btn-block">
+              Continue Shopping
+            </a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Checkout Modal (B2B Purchase Order Simulation) -->
+    <div id="checkout-modal" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 class="modal-title">Commercial Purchase Order Checkout</h3>
+          <button type="button" id="btn-close-checkout" class="modal-close-btn">&times;</button>
+        </div>
+        <form id="wholesale-checkout-form">
+          <div class="modal-body">
+            <div style="background-color: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.875rem; margin-bottom: 1.25rem; font-size: 0.8125rem; color: var(--color-primary); line-height: 1.5;">
+              <strong>Frontend Prototype Notice:</strong> Real-time payment processing and commercial payment gateways are simulated in this frontend demonstration. Submitting below generates a verified commercial purchase order receipt for procurement evaluation.
+            </div>
+
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+              Enter your enterprise purchasing details below. Invoices will be generated and dispatched with delivery bills of lading.
+            </p>
+
+            <div class="form-group">
+              <label class="form-label">Company / Entity Legal Name *</label>
+              <input type="text" id="checkout-company" class="form-control" placeholder="e.g. Acme Industrial Supply Corp" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Federal EIN or Resale Tax ID *</label>
+                <input type="text" class="form-control" placeholder="XX-XXXXXXX" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Purchase Order (PO) Number</label>
+                <input type="text" id="checkout-po" class="form-control" placeholder="e.g. PO-89214">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Receiving Facility Address *</label>
+              <input type="text" class="form-control" placeholder="Street address and dock number" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">City *</label>
+                <input type="text" class="form-control" placeholder="City" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">State *</label>
+                <input type="text" class="form-control" placeholder="TX" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Postal Code *</label>
+                <input type="text" class="form-control" placeholder="75001" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Facility Dock Capability</label>
+                <select class="form-control">
+                  <option>Standard Raised Freight Dock (48"-52")</option>
+                  <option>Ground Level (Requires Liftgate)</option>
+                  <option>Forklift Available On-Site</option>
+                  <option>Construction Jobsite Delivery</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Payment Terms</label>
+                <select class="form-control">
+                  <option>Net 30 Commercial Account</option>
+                  <option>ACH / Bank Wire Transfer</option>
+                  <option>Corporate Purchasing Card</option>
+                  <option>Letter of Credit (Export)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="document.getElementById('checkout-modal').classList.remove('open')" class="btn btn-secondary">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Submit Wholesale Purchase Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="order-confirmation-modal" class="modal-backdrop">
+      <div class="modal-dialog" style="max-width: 500px; text-align: center;">
+        <div class="modal-body" style="padding: 2.5rem 2rem;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--color-success-bg); color: var(--color-success); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h2 style="margin-bottom: 0.5rem;">Purchase Order Confirmed!</h2>
+          <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+            Your wholesale purchase order has been queued for warehouse staging and dispatch.
+          </p>
+
+          <div style="background-color: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; font-size: 0.8125rem; margin-bottom: 1.75rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="color: var(--color-text-subtle);">Purchase Order #:</span>
+              <strong id="conf-po-number" class="tabular-nums font-bold">PO-84192</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="color: var(--color-text-subtle);">Client Account:</span>
+              <strong id="conf-company-name">Apex Global</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--color-text-subtle);">Order Total:</span>
+              <strong id="conf-total-amount" class="tabular-nums font-bold text-slate-900">$0.00</strong>
+            </div>
+          </div>
+
+          <button type="button" id="btn-close-confirmation" class="btn btn-primary btn-block">
+            Return to Wholesale Catalog
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-title">MERIDIAN WHOLESALE & SUPPLY CO.</div>
+            <p class="footer-desc">
+              Direct-from-manufacturer B2B wholesale distribution platform. Supplying institutional food service, construction hardware, eco-friendly shipping logistics, and industrial facility sanitation.
+            </p>
+          </div>
+          <div>
+            <div class="footer-heading">Catalog Divisions</div>
+            <ul class="footer-links">
+              <li><a href="products.html?category=Commercial%20Kitchen">Commercial Kitchen</a></li>
+              <li><a href="products.html?category=Industrial%20Hardware">Industrial Hardware</a></li>
+              <li><a href="products.html?category=Eco%20Packaging">Eco Packaging</a></li>
+              <li><a href="products.html?category=Facility%20Equipment">Facility Equipment</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-heading">Wholesale Support</div>
+            <ul class="footer-links">
+              <li><a href="cart.html">View Quote Cart</a></li>
+              <li><a href="admin/login.html">Owner / Admin Portal</a></li>
+              <li><a href="index.html#contact">Commercial Freight Desk</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-heading">Logistics Support</div>
+            <p class="footer-desc">
+              National Dispatch Center: Mon – Fri 06:00 – 19:00 CST<br>
+              Direct Line: 1-800-555-0199
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 Meridian Wholesale & Supply Co. All rights reserved.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="index.html">Home</a>
+            <a href="products.html">Catalog</a>
+            <a href="cart.html">Cart</a>
+            <a href="admin/dashboard.html">Admin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
