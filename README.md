@@ -1,3 +1,5 @@
+# MY INTERNSHIP PROJECT AT AUSPIFY 
+
 # Meridian Wholesale & Supply Co. — Commercial E-Commerce Platform
 
 A complete, production-grade, responsive wholesale e-commerce interface designed for commercial B2B procurement, equipment distribution, and bulk supplies.
